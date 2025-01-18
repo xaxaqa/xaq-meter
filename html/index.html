@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taxi Meter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <transition name="fade">
+            <div class="taxi-meter" v-show="display">
+                <div class="meter-header">
+                    <i class="fas fa-taxi"></i>
+                    <span>TAXI METER</span>
+                </div>
+                <div class="meter-content">
+                    <div class="fare-display">
+                        <span class="currency">$</span>
+                        <span class="amount">{{ formatFare }}</span>
+                    </div>
+                    <div class="status-indicator" :class="{ active: isActive }">
+                        <i class="fas fa-circle"></i>
+                        {{ status }}
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
